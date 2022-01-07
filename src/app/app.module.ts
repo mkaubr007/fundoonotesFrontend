@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
+import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassw
     SignupComponent,
     LoginComponent,
     ForgetpasswordComponent,
+    ResetpasswordComponent,
 
   ],
   imports: [
