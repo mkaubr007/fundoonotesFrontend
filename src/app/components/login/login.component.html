@@ -1,0 +1,51 @@
+<div class="form-container">
+  <div class="form">
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-head-text">
+        <img src='../../../assets/FundooNotes.png' />
+        <h2>
+          Sign in
+          <br />
+        </h2>
+        <h3>Use your FundooNotes Account</h3>
+      </div>
+      <div class="form-content">
+        <mat-form-field appearance="outline">
+          <mat-label>Enter Username</mat-label>
+          <input matInput formControlName="username"/>
+        </mat-form-field>
+        <div>
+          <div>
+            <p>Enter a username</p>
+          </div>
+        </div>
+        <mat-form-field appearance="outline">
+          <mat-label>Enter password</mat-label>
+          <input
+            matInput
+            type="password"
+            size="50"
+            formControlName="password"
+          />
+        </mat-form-field>
+        <div>
+          <button mat-button color="primary">
+            Forgot Password?
+          </button>
+        </div>
+      </div>
+      <div class="form-footer">
+        <div>
+          <button mat-button color="primary" routerLink="/signup">
+            Create Account
+          </button>
+        </div>
+        <div>
+          <button mat-flat-button color="primary">
+            Login
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

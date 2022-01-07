@@ -3,6 +3,7 @@
     <div class="form-text">
       <form (ngSubmit)="onSubmit()">
         <div class="form-head-text">
+          <img src='../../../assets/FundooNotes.png' />
           <h2>Create your FundooNotes Account</h2>
           <h4>Continue to notes</h4>
         </div>
@@ -10,38 +11,19 @@
           <div class="names">
             <mat-form-field appearance="outline" class="form-field">
               <mat-label>First Name</mat-label>
-              <input
-                matInput
-                class="input"
-                id="first_name"
-                name="first_name"
-                formControlName="firstName"
-              />
+              <input matInput formControlName="firstName" />
             </mat-form-field>
 
             <mat-form-field appearance="outline" class="form-field">
               <mat-label>Last Name</mat-label>
-              <input
-                matInput
-                class="input"
-                id="first_name"
-                name="first_name"
-                formControlName="lastName"
-              />
+              <input matInput formControlName="lastName" />
             </mat-form-field>
           </div>
-
+          
           <mat-form-field appearance="outline" class="form-field">
             <mat-label>Email</mat-label>
-            <input
-              matInput
-              type="email"
-              name="Email"
-              id="Email"
-              class="input"
-              formControlName="email"
-            />
-            <mat-hint *ngIf="!submitted"
+            <input matInput formControlName="email" />
+            <mat-hint
               >You can use letters ,numbers or periods</mat-hint
             >
           </mat-form-field>
@@ -52,10 +34,9 @@
               <input
                 matInput
                 [type]="hide ? 'password' : 'text'"
-                class="input"
                 formControlName="password"
               />
-              <mat-hint *ngIf="!submitted">
+              <mat-hint>
                 Use 8 or more characters with a mix of letters, numbers &
                 symbols
               </mat-hint>
@@ -65,17 +46,13 @@
               <input
                 matInput
                 [type]="hide ? 'password' : 'text'"
-                class="input"
                 formControlName="confirm"
               />
             </mat-form-field>
           </div>
-
-          -->
           <div class="checkbox">
-            <mat-checkbox>Show password</mat-checkbox>
+            <mat-checkbox (click)="hide=!hide">Show password</mat-checkbox>
           </div>
-          -->
         </div>
         <div class="form-footer">
           <div>
@@ -93,7 +70,7 @@
     </div>
     <div class="image-signup">
       <div class="image-item">
-        <img [src]="imageSignUp" />
+        <img src='../../../assets/fundooAccount.png' />
       </div>
       <div>
         <p id="image-text">
@@ -101,5 +78,6 @@
           working for you
         </p>
       </div>
+    </div>
   </div>
 </div>
