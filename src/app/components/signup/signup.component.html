@@ -1,7 +1,7 @@
 <div class="form-container">
   <div class="form">
     <div class="form-text">
-      <form (ngSubmit)="onSubmit()">
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
         <div class="form-head-text">
           <img src='../../../assets/FundooNotes.png' />
           <h2>Create your FundooNotes Account</h2>
@@ -19,7 +19,7 @@
               <input matInput formControlName="lastName" />
             </mat-form-field>
           </div>
-          
+
           <mat-form-field appearance="outline" class="form-field">
             <mat-label>Email</mat-label>
             <input matInput formControlName="email" />
@@ -28,7 +28,7 @@
             >
           </mat-form-field>
 
-          <div class="password">
+          <div>
             <mat-form-field appearance="outline" class="form-field">
               <mat-label>Password</mat-label>
               <input

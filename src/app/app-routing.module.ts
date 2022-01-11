@@ -12,7 +12,7 @@ const routes: Routes = [
   },{
     path:'login',component:LoginComponent
   },{
-    path: 'forgetpassword', component:ForgetpasswordComponent
+    path: 'forgetpassword/token', component:ForgetpasswordComponent
   },{
     path: 'resetpassword', component:ResetpasswordComponent
   }

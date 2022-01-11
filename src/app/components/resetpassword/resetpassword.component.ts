@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+
 @Component({
   selector: 'app-resetpassword',
   templateUrl: './resetpassword.component.html',
@@ -19,5 +20,8 @@ export class ResetpasswordComponent implements OnInit {
   }
   onSubmit() {
     this.submitted = true;
+    if (this.resetForm.value.password != this.resetForm.value.confirm) {
+      return alert("password didn't match");
+    }
   }
 }
