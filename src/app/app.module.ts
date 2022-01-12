@@ -14,6 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { HttpClientModule } from '@angular/common/http';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 
 @NgModule({
@@ -23,7 +25,6 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     ForgetpasswordComponent,
     ResetpasswordComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -34,7 +35,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     MatCheckboxModule,
     MatButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
