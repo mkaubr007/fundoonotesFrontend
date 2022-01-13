@@ -1,0 +1,53 @@
+mat-toolbar{
+    display: flex;
+    justify-content: space-between;
+}
+.menu{
+    display: flex;
+    align-items: center;
+}
+.endIcons{
+display: flex;
+padding-right: 10px;
+}
+
+::ng-deep .mat-form-field
+ {
+    .mat-form-field-flex {
+        display: flex;
+          align-items: center;
+          height: 50%;
+          border-radius: 10px!important;
+          margin-top: 2em;
+          font-size: 15.3px;
+          padding: 0.1em !important;
+    }
+    .mat-form-field-underline {
+      width: 0;
+    }
+}
+.menuicon {
+    color: #5F6368;
+}
+mat-sidenav:not(.mat-drawer-opened) {
+        transform: translate3d(0, 0, 0) !important;
+        visibility: visible !important;
+        width: 70px ;
+      }
+      mat-sidenav {
+        width: 250px;
+        border: 0;
+      }
+      mat-sidenav-content{
+          padding-left: 100px;
+          background-color: white;
+      }
+      .main{
+        min-height: 500px;
+    }
+    mat-list-item:hover
+      {
+          background-color: #FEEFC3 !important;
+          border-bottom-right-radius: 30px;
+          border-top-right-radius: 30px;
+      }

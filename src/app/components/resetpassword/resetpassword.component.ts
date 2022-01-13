@@ -32,7 +32,7 @@ export class ResetpasswordComponent implements OnInit {
     let reqData = {
       email: this.resetForm.value.email,
       password: this.resetForm.value.password,
-      code: this.resetForm.value.confirm,
+      code: this.resetForm.value.code,
     };
     return this.user.Reset(reqData).subscribe(
       (res: any) => {
@@ -41,7 +41,7 @@ export class ResetpasswordComponent implements OnInit {
           verticalPosition: 'bottom',
           horizontalPosition: 'left',
         });
-        this.router.navigate(['login']);
+        this.router.navigate(['/login']);
       },
       (error) => {
         this.snackBar.open(`${error.error.message}`, '', {duration: 3000 ,verticalPosition: 'bottom',

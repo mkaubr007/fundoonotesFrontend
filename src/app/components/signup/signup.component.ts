@@ -28,14 +28,14 @@ export class SignupComponent implements OnInit {
       email: ['', Validators.required],
       password: ['', Validators.required],
       confirm: ['', Validators.required],
-      service: 'advanced',
     });
   }
 
   onSubmit() {
+    console.log("on signup")
     this.submitted = true;
     if (this.signupForm.value.password != this.signupForm.value.confirm) {
-      return alert("password didn't match");
+       alert("password didn't match");
     }
     if (this.signupForm.valid) {
       // console.log(this.signupForm.value);
@@ -44,13 +44,12 @@ export class SignupComponent implements OnInit {
         lastName: this.signupForm.value.lastName,
         email: this.signupForm.value.email,
         password: this.signupForm.value.password,
-        service: this.signupForm.value.service,
       };
-      return this.user.Signup(reqData).subscribe(
+       this.user.Signup(reqData).subscribe(
         (res: any) => {
           this.snackBar.open(`${res.message}`, '', {duration: 3000 ,verticalPosition: 'bottom',
           horizontalPosition: 'left' })
-          this.router.navigate(['login']);
+          this.router.navigate(['/login']);
         },
         (error) => {
           this.snackBar.open(`${error.error.message}`, '', {duration: 3000 ,verticalPosition: 'bottom',

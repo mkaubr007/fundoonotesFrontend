@@ -21,22 +21,23 @@ export class ForgetpasswordComponent implements OnInit {
 
   ngOnInit(): void {
     this.forgetForm = this.fb.group({
-      username: ['', Validators.required],
+      email: ['', Validators.required],
     });
   }
   onSubmit() {
+    console.log( this.forgetForm.value)
     this.submitted = true;
     let reqData = {
-      email: this.forgetForm.value.username,
+      email: this.forgetForm.value.email,
     };
-    return this.user.Forget(reqData).subscribe(
+     return this.user.Forget(reqData).subscribe(
       (res: any) => {
         this.snackBar.open(`${res.message}`, '', {
           duration: 3000,
           verticalPosition: 'bottom',
           horizontalPosition: 'left',
         });
-        this.router.navigate(['resetpassword']);
+        this.router.navigate(['/resetpassword']);
       },
       (error) => {
         this.snackBar.open(`${error.error.message}`, '', {duration: 3000 ,verticalPosition: 'bottom',

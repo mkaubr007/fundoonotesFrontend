@@ -1,17 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import {UserServiceService} from '../../service/user.service/user.service';
+import { UserServiceService } from '../../service/user.service/user.service';
+import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  loginForm!:FormGroup
+  loginForm!: FormGroup;
   submitted = false;
-  errorMessage: string | undefined;
-  constructor(private fb:FormBuilder,private user:UserServiceService) { }
+  hide = true;
+
+  constructor(
+    private fb: FormBuilder,
+    private user: UserServiceService,
+    private router: Router,
+    private snackBar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -24,11 +32,19 @@ export class LoginComponent implements OnInit {
     let reqData = {
       email: this.loginForm.value.username,
       password: this.loginForm.value.password,
-    }
-    return this.user.Login(reqData).subscribe((res: any) => {
-      console.log(res);
-    },err =>{
-      console.log(err.message);
-    })
+    };
+    return this.user.Login(reqData).subscribe(
+      (res: any) => {
+        this.snackBar.open(`${res.message}`, '', {
+          duration: 3000,
+          verticalPosition: 'bottom',
+          horizontalPosition: 'left',
+        });
+        this.router.navigate(['/home']);
+      },
+      (err) => {
+        console.log(err.message);
+      }
+    );
   }
 }

@@ -57,7 +57,7 @@ export class UserServiceService {
         'Content-Type': 'application/json',
       }),
     };
-    return this.httpService.post(
+    return this.httpService.put(
       `${environment.baseUrl}/reset-Password`,
       reqData,
       false,
