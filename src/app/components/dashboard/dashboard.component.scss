@@ -32,22 +32,24 @@ padding-right: 10px;
 mat-sidenav:not(.mat-drawer-opened) {
         transform: translate3d(0, 0, 0) !important;
         visibility: visible !important;
-        width: 70px ;
+        width: 50px ;
       }
       mat-sidenav {
-        width: 250px;
+        width: 300px;
         border: 0;
       }
       mat-sidenav-content{
           padding-left: 100px;
           background-color: white;
-      }
-      .main{
-        min-height: 500px;
-    }
-    mat-list-item:hover
-      {
-          background-color: #FEEFC3 !important;
-          border-bottom-right-radius: 30px;
-          border-top-right-radius: 30px;
-      }
+        }
+        .main
+        {
+            min-height: 500px;
+            background-color: white;
+        }
+        mat-list-item:hover
+        {
+            background-color: #FEEFC3 !important;
+            border-bottom-right-radius: 30px;
+            border-top-right-radius: 30px;
+        } 

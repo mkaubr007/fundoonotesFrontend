@@ -21,6 +21,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+import { AddNoteComponent } from './components/add-note/add-note.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import {MatListModule} from '@angular/material/list';
     ForgetpasswordComponent,
     ResetpasswordComponent,
     DashboardComponent,
+    AddNoteComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -46,14 +50,8 @@ import {MatListModule} from '@angular/material/list';
     MatIconModule,
     MatCardModule,
     MatSidenavModule,
-    MatListModule
-  ],
-  exports:[
-    SignupComponent,
-    LoginComponent,
-    ForgetpasswordComponent,
-    ResetpasswordComponent,
-    DashboardComponent
+    MatListModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

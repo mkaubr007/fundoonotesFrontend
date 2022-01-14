@@ -1,0 +1,40 @@
+<mat-card class="notebar" *ngIf="hide" (click)="hide=false">
+  <mat-card-title class="title">
+      Take a Note...
+  </mat-card-title>
+  <mat-card-subtitle class="icons">
+      <mat-icon mat-list-icon class= "material-icons-outlined">check_box</mat-icon>
+      <mat-icon mat-list-icon class= "material-icons-outlined">brush</mat-icon>
+      <mat-icon mat-list-icon class= "material-icons-outlined">crop_original</mat-icon>
+  </mat-card-subtitle>
+</mat-card>
+<mat-card class="card" *ngIf="hide==false">
+  <div class="titlerow">
+      <mat-card-title class="noteTitle">
+          <textarea cdkTextareaAutosize  placeholder="Title"></textarea>
+      </mat-card-title>
+      <mat-card-subtitle class="icon">
+          <mat-icon  class= "material-icons-outlined">push_pin</mat-icon>
+      </mat-card-subtitle>
+  </div>
+  <div class="description" style="padding-top:10px ;">
+      <mat-card-title class="description">
+          <textarea cdkTextareaAutosize placeholder="Take a note..."></textarea>
+      </mat-card-title>
+  </div>
+  <div class="cardbottom" style="padding-top:15px ;">
+      <div class="icon">
+          <mat-icon class= "material-icons-outlined">add_alert</mat-icon>
+          <mat-icon class= "material-icons-outlined">person_add</mat-icon>
+          <mat-icon class= "material-icons-outlined">crop_original</mat-icon>
+          <mat-icon class= "material-icons-outlined">image</mat-icon>
+          <mat-icon class= "material-icons-outlined">archive</mat-icon>
+          <mat-icon class= "material-icons-outlined">more_vert</mat-icon>
+          <mat-icon class= "material-icons-outlined">undo</mat-icon>
+          <mat-icon class= "material-icons-outlined">redo</mat-icon>
+      </div>
+      <div class="button">
+          <button  mat-button style="color: #1A73E8;" (click)="hide=true">Close</button>
+      </div>
+  </div>
+</mat-card>

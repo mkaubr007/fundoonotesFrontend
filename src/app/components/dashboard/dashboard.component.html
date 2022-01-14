@@ -13,14 +13,14 @@
   </mat-card-title>
   </div>
   <div class="search">
-      <mat-form-field class="search" appearance="fill" [style.width.px]=500>
+      <mat-form-field class="search" appearance="fill" [style.width.px]=700>
           <input matInput placeholder="Search">
           <mat-icon matPrefix style="margin-right: 10px;">search</mat-icon>
           </mat-form-field>
   </div>
   <div class="endIcons">
       <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-          <mat-icon>view_agenda</mat-icon>
+          <mat-icon class="material-icons-outlined">view_agenda</mat-icon>
       </button>
       <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
           <mat-icon>supervised_user_circle</mat-icon>
@@ -52,4 +52,7 @@
             </mat-list-item>
       </mat-nav-list>
   </mat-sidenav>
+  <mat-sidenav-content>
+    <app-add-note></app-add-note>
+</mat-sidenav-content>
 </mat-sidenav-container>
