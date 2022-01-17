@@ -23,7 +23,12 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import { AddNoteComponent } from './components/add-note/add-note.component';
 import {MatExpansionModule} from '@angular/material/expansion';
-
+import { IconComponent } from './components/icon/icon.component';
+import { CollaboratorComponent } from './components/collaborator/collaborator.component';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatDialogModule} from '@angular/material/dialog';
+import { GetNotesComponent } from './components/get-notes/get-notes.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +38,10 @@ import {MatExpansionModule} from '@angular/material/expansion';
     ResetpasswordComponent,
     DashboardComponent,
     AddNoteComponent,
+    IconComponent,
+    CollaboratorComponent,
+    GetNotesComponent,
+
 
   ],
   imports: [
@@ -51,7 +60,10 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatCardModule,
     MatSidenavModule,
     MatListModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatMenuModule,
+    MatTooltipModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

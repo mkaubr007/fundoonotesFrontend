@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
 mat-toolbar{
     display: flex;
     justify-content: space-between;
@@ -10,11 +11,13 @@ mat-toolbar{
 display: flex;
 padding-right: 10px;
 }
-
+.image{
+    height: 40px;
+}
 ::ng-deep .mat-form-field
  {
     .mat-form-field-flex {
-        display: flex;
+          display: flex;
           align-items: center;
           height: 50%;
           border-radius: 10px!important;
@@ -29,27 +32,66 @@ padding-right: 10px;
 .menuicon {
     color: #5F6368;
 }
+
 mat-sidenav:not(.mat-drawer-opened) {
-        transform: translate3d(0, 0, 0) !important;
-        visibility: visible !important;
-        width: 50px ;
-      }
-      mat-sidenav {
-        width: 300px;
-        border: 0;
-      }
-      mat-sidenav-content{
-          padding-left: 100px;
-          background-color: white;
-        }
-        .main
-        {
-            min-height: 500px;
-            background-color: white;
-        }
-        mat-list-item:hover
-        {
-            background-color: #FEEFC3 !important;
-            border-bottom-right-radius: 30px;
-            border-top-right-radius: 30px;
-        } 
+    transform: translate3d(0, 0, 0) !important;
+    visibility: visible !important;
+    width: 45px !important;
+    overflow: hidden!important;
+  }
+  mat-sidenav {
+    width: 250px;
+    border-right: 0;
+  }
+.main
+{
+
+    min-height: 600px;
+    background-color: white;
+}
+mat-list-item:hover
+{
+    background-color: #FEEFC3 !important;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+}
+::ng-deep.mat-menu-content:not(:empty)
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+ .profilePic{
+    height: 70px;
+    width: 25%;
+    border-radius: 50%;
+ }
+
+ ::ng-deep #mat-menu-panel-0 {
+    width: 354px !important;
+    border-radius: 8px !important;
+}
+h1{
+    padding-top: 10px;
+    color: #202124;
+    font: 500 16px/22px Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    letter-spacing: 0.29px;
+    margin: 0;
+}
+p{
+    color: #5f6368;
+    font: 400 14px/19px Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    letter-spacing: normal;
+}
+mat-divider {
+    width: 100%;
+}
+mat-sidenav-content{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+

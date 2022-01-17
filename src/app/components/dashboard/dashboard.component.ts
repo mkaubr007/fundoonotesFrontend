@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  list: boolean = true;
+  toggleView()
+  {
+    this.list = !this.list;
+  }
   opened: boolean=true;
   constructor() { }
 
