@@ -1,0 +1,70 @@
+<mat-expansion-panel
+  hideToggle
+  class="createNotes"
+  (opened)="panelOpenState = true"
+  (closed)="panelOpenState = false"
+  #panel
+>
+  <mat-expansion-panel-header>
+    <mat-panel-title
+      style="align-items: center"
+      (keydown.Space)="$event.stopPropagation()"
+      (keydown.Enter)="$event.stopPropagation()"
+    >
+      <textarea
+        matInput
+        style="overflow: hidden"
+        matInput
+        cdkTextareaAutosize
+        cdkAutosizeMinRows="2"
+        cdkAutosizeMaxRows="3"
+        [(ngModel)]="title"
+        placeholder="{{ panelOpenState ? 'Title' : 'Take a note..' }}"
+      ></textarea>
+    </mat-panel-title>
+    <mat-panel-description
+      style="flex-grow: 0"
+      *ngIf="!panelOpenState"
+      (click)="panel.toggle()"
+    >
+      <button mat-icon-button>
+        <mat-icon mat-list-icon class="material-icons-outlined">check_box</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon mat-list-icon class="material-icons-outlined">brush</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon mat-list-icon class="material-icons-outlined">crop_original</mat-icon>
+      </button>
+    </mat-panel-description>
+    <mat-panel-description style="flex-grow: 0" *ngIf="panelOpenState">
+      <button mat-icon-button (click)="panel.toggle()">
+        <mat-icon mat-list-icon class= "material-icons-outlined" style="color:#767676 ;">push_pin</mat-icon>
+      </button>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <textarea
+    matInput
+    style="overflow: hidden"
+    matInput
+    cdkTextareaAutosize
+    cdkAutosizeMinRows="2"
+    cdkAutosizeMaxRows="10"
+    [(ngModel)]="description"
+    placeholder="Take a note.."
+  ></textarea>
+  <div fxLayout="row" fxLayoutAlign="space-between end">
+    <div fxFlex="70">
+      <app-icons></app-icons>
+    </div>
+    <div class="closeButton">
+      <button
+        mat-icon-button
+        (click)="onClose(); panel.toggle()"
+        style="opacity: 0.9;flex-grow: 0;"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</mat-expansion-panel>

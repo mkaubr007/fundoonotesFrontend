@@ -40,6 +40,8 @@ export class LoginComponent implements OnInit {
           verticalPosition: 'bottom',
           horizontalPosition: 'left',
         });
+        localStorage.setItem('token',res.data)
+        console.log(res)
         this.router.navigate(['/home']);
       },
       (err) => {

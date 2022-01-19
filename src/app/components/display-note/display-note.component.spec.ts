@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddNoteComponent } from './add-note.component';
+import { DisplayNoteComponent } from './display-note.component';
 
-describe('AddNoteComponent', () => {
-  let component: AddNoteComponent;
-  let fixture: ComponentFixture<AddNoteComponent>;
+describe('DisplayNoteComponent', () => {
+  let component: DisplayNoteComponent;
+  let fixture: ComponentFixture<DisplayNoteComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddNoteComponent ]
+      declarations: [ DisplayNoteComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddNoteComponent);
+    fixture = TestBed.createComponent(DisplayNoteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

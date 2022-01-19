@@ -7,7 +7,10 @@ import { HttpServiceService } from '../http.service/http.service.service';
   providedIn: 'root',
 })
 export class UserServiceService {
-  constructor(private httpService: HttpServiceService) {}
+  
+  constructor(private httpService: HttpServiceService) {
+
+  }
 
   Signup(reqData: any) {
     let httpOptions = {
@@ -64,4 +67,6 @@ export class UserServiceService {
       httpOptions
     );
   }
+
+
 }
