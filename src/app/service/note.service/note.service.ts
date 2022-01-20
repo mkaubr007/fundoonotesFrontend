@@ -41,4 +41,19 @@ export class NoteService {
       httpOptions
     );
   }
+
+  updateNoteService(reqPayload:any) {
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer '+this.token,
+      }),
+    };
+    return this.httpService.put(
+      `${environment.baseUrl}/grabNotes/reqPayload.id`,
+      reqPayload,
+      true,
+      httpOptions
+    );
+  }
 }

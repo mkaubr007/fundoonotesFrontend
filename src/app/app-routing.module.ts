@@ -28,7 +28,6 @@ const routes: Routes = [
     path:'home',component:DashboardComponent,
 
     children:[
-      // {path:'', redirectTo:"/home/notes", pathMatch:'full' },
       {path:'notes', component:GetAllNoteComponent},
     ]
   }

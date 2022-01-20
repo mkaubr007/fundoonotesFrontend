@@ -1,0 +1,16 @@
+<div class="textArea-title">
+  <input matInput [(ngModel)]="title">
+</div>
+<div class="textArea-message">
+  <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="1" cdkAutosizeMaxRows="20"
+     [(ngModel)]="description"></textarea>
+</div>
+<div fxLayout="row" fxLayoutAlign="space-between end">
+  <div fxFlex="70">
+     <app-icons></app-icons>
+  </div>
+  <div class="closeButton">
+    <button mat-icon-button (click)="onClose()" style="opacity: 0.9;flex-grow: 0;">
+        Close
+     </button></div>
+</div>

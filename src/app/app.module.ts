@@ -26,6 +26,8 @@ import { DisplayNoteComponent } from './components/display-note/display-note.com
 import { IconsComponent } from './components/icons/icons.component';
 import { GetAllNoteComponent } from './components/get-all-note/get-all-note.component';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { UpdateComponent } from './components/update/update.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -41,6 +43,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     DisplayNoteComponent,
     IconsComponent,
     GetAllNoteComponent,
+    UpdateComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +62,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatSidenavModule,
     MatListModule,
     MatExpansionModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

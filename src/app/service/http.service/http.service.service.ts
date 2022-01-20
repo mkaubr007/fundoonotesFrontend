@@ -15,14 +15,11 @@ export class HttpServiceService {
   }
   put(url:string,payload:any,token:boolean=false,httpOptions:any)
   {
-    return this.http.post(url, payload, token&&httpOptions)
+    return this.http.put(url, payload, token&&httpOptions)
   }
   get(url:string,token:boolean=false,httpOptions:any)
   {
-    return this.http.post(url,  token&&httpOptions)
+    return this.http.get(url,  token&&httpOptions)
   }
-  delete(url:string,payload:any,token:boolean=false,httpOptions:any)
-  {
-    return this.http.post(url, payload, token&&httpOptions)
-  }
+ 
 }
