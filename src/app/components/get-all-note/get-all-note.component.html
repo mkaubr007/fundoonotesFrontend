@@ -2,7 +2,7 @@
   <app-create-note (noteCreated)="noteData($event)"></app-create-note>
 </div>
 <div style="margin-top: 150px;">
-  <app-display-note [notesArray]="noteList"></app-display-note>
+  <app-display-note [notesArray]="noteList"  (noteUpdated)="updatedData($event)"></app-display-note>
 </div>
 
 

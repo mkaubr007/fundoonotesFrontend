@@ -12,9 +12,9 @@ export class DisplayNoteComponent implements OnInit {
   @Input() notesArray:any;
 
   constructor(public dialog: MatDialog) { }
-  
-  ngOnInit(): void {
+  @Output() noteUpdated = new EventEmitter<any>();
 
+  ngOnInit(): void {
   }
   openDialog(param: any) {
     console.log(param)
@@ -25,7 +25,11 @@ export class DisplayNoteComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
-
+      this.noteUpdated.emit(result);
     });
+  }
+
+  operation(value: any) {
+    this.noteUpdated.emit(value);
   }
 }

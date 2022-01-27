@@ -1,4 +1,4 @@
-import { Component,Inject,Input,OnInit} from '@angular/core';
+import { Component,EventEmitter,Inject,Input,OnInit, Output} from '@angular/core';
 import { NoteService } from 'src/app/service/note.service/note.service';
 
 
@@ -12,7 +12,7 @@ export class IconsComponent implements OnInit {
   @Input()note:any;
   constructor(private noteService:NoteService) {
   }
-
+  @Output() noteOperation = new EventEmitter<any>();
   ngOnInit(): void {
     console.log(this.note);
   }
@@ -21,8 +21,8 @@ export class IconsComponent implements OnInit {
     console.log(this.note);
     this.noteService.deleteNoteService(this.note._id).subscribe((result) => {
       console.log(result);
+      this.noteOperation.emit(result);
     })
-    window.location.reload();
   }
 }
 

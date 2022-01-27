@@ -8,7 +8,7 @@
         {{ note.description }}
       </div>
       <div>
-        <app-icons [note]="note" class="icon"></app-icons>
+        <app-icons [note]="note" (noteOperation)="operation($event)" class="icon"></app-icons>
       </div>
     </mat-card>
   </div>
