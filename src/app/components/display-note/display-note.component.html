@@ -1,6 +1,6 @@
-<div fxLayout="row wrap" fxLayoutAlign="center center">
+<div fxLayout="row wrap" fxLayoutAlign="center center" style="border: 2px solid white; width: 1200px ;">
   <div *ngFor="let note of notesArray">
-    <mat-card class="card" fxLayout="column">
+    <mat-card class="card" fxLayout="column" style="margin:5px;">
       <div class="textArea" (click)="openDialog(note)">
         {{ note.title }}
       </div>
@@ -8,7 +8,7 @@
         {{ note.description }}
       </div>
       <div>
-        <app-icons class="icon"></app-icons>
+        <app-icons [note]="note" class="icon"></app-icons>
       </div>
     </mat-card>
   </div>

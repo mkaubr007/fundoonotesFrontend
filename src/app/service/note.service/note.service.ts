@@ -21,7 +21,7 @@ export class NoteService {
       }),
     };
     return this.httpService.post(
-      `${environment.baseUrl}/buildNote`,
+      `${environment.baseUrl}/note`,
       reqData,
       true,
       httpOptions
@@ -36,13 +36,14 @@ export class NoteService {
       }),
     };
     return this.httpService.get(
-      `${environment.baseUrl}/grabNotes`,
+      `${environment.baseUrl}/note`,
       true,
       httpOptions
     );
   }
 
-  updateNoteService(reqPayload:any) {
+  updateNoteService(reqPayload:any,noteId:any) {
+    console.log(this.token)
     let httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -50,8 +51,22 @@ export class NoteService {
       }),
     };
     return this.httpService.put(
-      `${environment.baseUrl}/grabNotes/reqPayload.id`,
+      `${environment.baseUrl}/note/${noteId}`,
       reqPayload,
+      true,
+      httpOptions
+    );
+  }
+
+  deleteNoteService(noteId:any) {
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer '+this.token,
+      }),
+    };
+    return this.httpService.delete(
+      `${environment.baseUrl}/note/${noteId}`,
       true,
       httpOptions
     );

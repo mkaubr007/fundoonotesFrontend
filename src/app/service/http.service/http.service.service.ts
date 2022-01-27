@@ -10,7 +10,6 @@ export class HttpServiceService {
 
   post(url:string,payload:any,token:boolean,httpOptions:any)
   {
-    console.log(payload,token,url)
     return this.http.post(url, payload, token&&httpOptions)
   }
   put(url:string,payload:any,token:boolean=false,httpOptions:any)
@@ -21,5 +20,8 @@ export class HttpServiceService {
   {
     return this.http.get(url,  token&&httpOptions)
   }
- 
+  delete(url:string,token:boolean=false,httpOptions:any)
+  {
+    return this.http.delete(url, token&&httpOptions)
+  }
 }

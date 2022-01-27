@@ -10,7 +10,7 @@
   overflow: auto;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 100; /* number of lines to show */
+  -webkit-line-clamp: 100;
   -webkit-box-orient: vertical;
 }
 
@@ -30,6 +30,7 @@
   -webkit-line-clamp: 100; /* number of lines to show */
   -webkit-box-orient: vertical;
 }
-.closeButton{
-  margin-left: 500px;
+.closeButton
+{
+  margin-left: 100px;
 }

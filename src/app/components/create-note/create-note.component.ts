@@ -12,7 +12,7 @@ export class CreateNoteComponent implements OnInit {
   description:any
 
   constructor(private notesService: NoteService) { }
-
+  @Output() noteCreated= new EventEmitter<any>();
   ngOnInit(): void {
   }
 
@@ -29,6 +29,7 @@ export class CreateNoteComponent implements OnInit {
 
       this.notesService.CreateNote(reqData).subscribe((response:any)=>{
         console.log(response);
+        this.noteCreated.emit(response);
       })
     }
   }

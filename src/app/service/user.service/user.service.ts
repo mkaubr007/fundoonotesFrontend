@@ -63,7 +63,7 @@ export class UserServiceService {
     return this.httpService.put(
       `${environment.baseUrl}/reset-Password`,
       reqData,
-      false,
+      true,
       httpOptions
     );
   }

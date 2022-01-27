@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output, } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output,} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { UpdateComponent } from '../update/update.component';
+import { UpdateNoteComponent } from '../update-note/update-note.component';
 @Component({
   selector: 'app-display-note',
   templateUrl: './display-note.component.html',
@@ -10,22 +10,22 @@ export class DisplayNoteComponent implements OnInit {
   title:any
   description:any
   @Input() notesArray:any;
-  @Output() noteUpdated = new EventEmitter<any>();
-  constructor(public dialog: MatDialog) { }
 
+  constructor(public dialog: MatDialog) { }
+  
   ngOnInit(): void {
 
   }
-  openDialog(note: any) {
-    const dialogRef = this.dialog.open(UpdateComponent, {
-      panelClass: 'dialog-container-custom',
+  openDialog(param: any) {
+    console.log(param)
+    const dialogRef = this.dialog.open(UpdateNoteComponent, {
       width: "600px",
-      data: note
+      data: param
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
-      this.noteUpdated.emit(result);
+
     });
   }
 }

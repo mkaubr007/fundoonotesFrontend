@@ -22,8 +22,12 @@
      <mat-icon mat-list-icon class="material-icons-outlined">archive</mat-icon>
   </button>
 
-  <button mat-icon-button  matTooltip="More"
-     matTooltipClass="tooltip">
-     <mat-icon mat-list-icon class="material-icons-outlined">more_vert</mat-icon>
-  </button>
+  <button mat-icon-button  [matMenuTriggerFor]="menu" matTooltip="More" matTooltipClass="tooltip">
+    <mat-icon style="font-size: 22px; opacity: 0.71;">more_vert</mat-icon>
+    <mat-menu #menu="matMenu">
+       <button mat-menu-item (click)='onDelete()'>Delete note</button>
+       <button mat-menu-item>Add label</button>
+       <button mat-menu-item>Add drawing</button>
+    </mat-menu>
+ </button>
 </div>

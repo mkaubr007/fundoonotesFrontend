@@ -1,4 +1,5 @@
-import { Component, OnInit} from '@angular/core';
+import { Component,Inject,Input,OnInit} from '@angular/core';
+import { NoteService } from 'src/app/service/note.service/note.service';
 
 
 @Component({
@@ -8,7 +9,23 @@ import { Component, OnInit} from '@angular/core';
 })
 export class IconsComponent implements OnInit {
 
-  constructor() { }
+  @Input()note:any;
+  constructor(private noteService:NoteService) {
+  }
+
   ngOnInit(): void {
+    console.log(this.note);
+  }
+
+  onDelete() {
+    console.log(this.note);
+    this.noteService.deleteNoteService(this.note._id).subscribe((result) => {
+      console.log(result);
+    })
+    window.location.reload();
   }
 }
+
+
+
+

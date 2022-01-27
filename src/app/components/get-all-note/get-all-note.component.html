@@ -1,9 +1,11 @@
 <div>
-  <app-create-note></app-create-note>
+  <app-create-note (noteCreated)="noteData($event)"></app-create-note>
 </div>
 <div style="margin-top: 150px;">
   <app-display-note [notesArray]="noteList"></app-display-note>
 </div>
+
+
 
 
 
